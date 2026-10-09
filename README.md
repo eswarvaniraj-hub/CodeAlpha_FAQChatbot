@@ -17,7 +17,7 @@ The chatbot intelligently matches user inquiries against an FAQ knowledge base u
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Structure:
 
 ```
 faq-chatbot/
