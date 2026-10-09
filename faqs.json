@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What is your return policy, and how many days do I have to return an item?",
+    "answer": "We offer a 30-day hassle-free return policy. Items must be unworn, unwashed, and in their original packaging with tags attached."
+  },
+  {
+    "question": "How do I return an item or start a product return?",
+    "answer": "To start a return, visit our online Returns Portal, enter your order number and email address, choose the items you wish to return, and print your prepaid return shipping label."
+  },
+  {
+    "question": "When will I receive my refund or money back?",
+    "answer": "Once our warehouse receives and inspects your returned package, your refund will be processed within 3 to 5 business days back to your original payment method."
+  },
+  {
+    "question": "How can I track my order or package status?",
+    "answer": "Once your order ships, you will receive a confirmation email with a direct tracking link. You can also view real-time tracking by logging into your account and visiting the 'My Orders' section."
+  },
+  {
+    "question": "How long does standard shipping and delivery take?",
+    "answer": "Standard shipping usually takes 3 to 5 business days within the continental United States. Express 2-day and overnight shipping options are also available at checkout."
+  },
+  {
+    "question": "Do you offer international shipping to other countries?",
+    "answer": "Yes, we ship to over 50 countries worldwide! International delivery typically takes 7 to 14 business days depending on local customs clearance."
+  },
+  {
+    "question": "Is free shipping available on orders?",
+    "answer": "Yes! We offer free standard shipping on all domestic orders over $50. For orders under $50, flat-rate shipping is $4.99."
+  },
+  {
+    "question": "What payment methods do you accept? Can I pay with credit card or PayPal?",
+    "answer": "We accept major credit and debit cards (Visa, MasterCard, American Express, Discover), PayPal, Apple Pay, Google Pay, and Klarna for split payments."
+  },
+  {
+    "question": "Can I cancel or change my order after placing it?",
+    "answer": "You can cancel or modify your order within 1 hour of placing it by visiting 'My Orders'. After 1 hour, our fulfillment team begins packaging, but you can always return the item once it arrives."
+  },
+  {
+    "question": "What should I do if my item arrived damaged, defective, or broken?",
+    "answer": "We are so sorry! Please reach out to our support team within 48 hours of delivery with photos of the damaged item and packaging, and we will send a free replacement immediately."
+  },
+  {
+    "question": "How do I reset my account password or login credentials?",
+    "answer": "Click on 'Forgot Password' on the sign-in page. Enter your registered email address, and we will email you a secure link to create a new password."
+  },
+  {
+    "question": "What are your customer support hours, and when is the team available?",
+    "answer": "Our customer support team is available Monday through Friday from 8:00 AM to 8:00 PM EST, and Saturday through Sunday from 9:00 AM to 5:00 PM EST."
+  },
+  {
+    "question": "How can I contact customer support directly by email or phone?",
+    "answer": "You can contact our support team anytime by emailing support@novamart.com or by calling our toll-free phone number at 1-800-555-NOVA during business hours."
+  },
+  {
+    "question": "How do I apply a discount code, coupon, or promo code?",
+    "answer": "During checkout on the payment step, enter your promo code into the 'Gift Card or Discount Code' field and click 'Apply' to see your new total."
+  },
+  {
+    "question": "Do you sell digital gift cards or vouchers?",
+    "answer": "Yes, we offer digital gift cards in amounts from $25 to $200. They are delivered instantly via email with instructions on how to redeem them at checkout and never expire."
+  },
+  {
+    "question": "Can I change my delivery address or shipping location after ordering?",
+    "answer": "If your order has not been dispatched yet, you can update your shipping address in 'My Orders' or contact our support team immediately so we can adjust it before shipment."
+  },
+  {
+    "question": "Is my payment and personal information secure and safe?",
+    "answer": "Yes, our store uses industry-standard 256-bit SSL encryption to protect your data. We adhere to PCI-DSS compliance and never store your full payment card details."
+  },
+  {
+    "question": "What happens if an item or product is out of stock?",
+    "answer": "If an item is out of stock, click 'Notify Me When Available' on the product page and enter your email. We will notify you immediately once new inventory arrives."
+  },
+  {
+    "question": "Do your products come with a warranty or guarantee?",
+    "answer": "All our electronics, home appliances, and accessories include a 1-year limited warranty that covers manufacturing defects and hardware malfunctions."
+  },
+  {
+    "question": "Hello! Who are you and how can you help me?",
+    "answer": "Hello! I am NovaMart's virtual FAQ assistant. You can ask me questions about shipping, tracking, return policies, payment methods, warranties, and support hours!"
+  }
+]

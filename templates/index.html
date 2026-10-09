@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-Powered FAQ Chatbot built with Python Flask, Scikit-Learn TF-IDF, and Cosine Similarity for CodeAlpha Internship Task 2.">
+  <title>NovaMart Support AI — Intelligent FAQ Chatbot</title>
+  
+  <!-- Modern Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Chatbot Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Chat Card Wrapper -->
+    <div class="chat-card" id="chat-card">
+      
+      <!-- Header -->
+      <header class="chat-header" id="chat-header">
+        <div class="header-bot-info">
+          <div class="bot-avatar-wrapper">
+            <div class="bot-avatar" aria-label="Bot Avatar">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="10" rx="3"></rect>
+                <circle cx="12" cy="5" r="2"></circle>
+                <path d="M12 7v4"></path>
+                <line x1="8" y1="16" x2="8.01" y2="16"></line>
+                <line x1="16" y1="16" x2="16.01" y2="16"></line>
+              </svg>
+            </div>
+            <span class="online-indicator" title="Bot Online"></span>
+          </div>
+          <div class="header-text">
+            <h1 class="header-title">NovaMart Support AI</h1>
+            <p class="header-subtitle">
+              <span class="nlp-badge">TF-IDF & Cosine Similarity</span>
+              <span class="bullet">•</span> Active Assistant
+            </p>
+          </div>
+        </div>
+        
+        <div class="header-actions">
+          <button id="clear-btn" class="icon-btn" title="Clear Chat History" aria-label="Clear Chat History">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 6h18"></path>
+              <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+              <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Scrollable Message Area -->
+      <main class="chat-messages" id="chat-messages" role="log" aria-live="polite">
+        
+        <!-- Welcome Message -->
+        <div class="message bot-message" id="welcome-message">
+          <div class="avatar-small">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="10" rx="3"></rect>
+              <circle cx="12" cy="5" r="2"></circle>
+              <path d="M12 7v4"></path>
+            </svg>
+          </div>
+          <div class="message-content">
+            <div class="message-bubble">
+              <p>Hello! Welcome to <strong>NovaMart Support</strong>. I am your local AI FAQ assistant powered by <em>TF-IDF Vectorization</em> and <em>Cosine Similarity</em>.</p>
+              <p>How can I help you today? You can choose one of the suggested topics below or type your own question!</p>
+            </div>
+            <span class="message-time">Just now</span>
+          </div>
+        </div>
+
+        <!-- Suggested Question Chips -->
+        <div class="suggested-chips-container" id="suggested-chips">
+          <p class="chips-label">Popular Questions:</p>
+          <div class="chips-list">
+            <button class="chip" data-question="How can I track my order status?">
+              📦 Track order
+            </button>
+            <button class="chip" data-question="What is your return policy, and how many days do I have to return an item?">
+              🔄 Return policy
+            </button>
+            <button class="chip" data-question="What payment methods do you accept?">
+              💳 Payment methods
+            </button>
+            <button class="chip" data-question="Is free shipping available on orders?">
+              🚚 Free shipping
+            </button>
+            <button class="chip" data-question="What are your customer support hours?">
+              ⏰ Support hours
+            </button>
+          </div>
+        </div>
+
+        <!-- Typing Indicator (Hidden by default) -->
+        <div class="typing-indicator-wrapper" id="typing-indicator" style="display: none;">
+          <div class="avatar-small">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="10" rx="3"></rect>
+              <circle cx="12" cy="5" r="2"></circle>
+              <path d="M12 7v4"></path>
+            </svg>
+          </div>
+          <div class="typing-bubble">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Input Footer Area -->
+      <footer class="chat-footer">
+        <form class="chat-form" id="chat-form" onsubmit="return false;">
+          <input
+            type="text"
+            id="user-input"
+            class="user-input"
+            placeholder="Ask a question (e.g., 'How do I return an item?')..."
+            autocomplete="off"
+            required
+            maxlength="300"
+            aria-label="Your question"
+          />
+          <button type="submit" id="send-btn" class="send-btn" aria-label="Send message">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+        <div class="footer-note">
+          <span>CodeAlpha Task 2 &bull; 100% Offline Python Backend</span>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Chatbot Script -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
