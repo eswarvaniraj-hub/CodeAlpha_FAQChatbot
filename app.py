@@ -80,7 +80,9 @@ def ask():
         }), 500
 
 
+import os
+
 if __name__ == "__main__":
-    # Run Flask local development server
-    # debug=True allows hot-reloading during development
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    # Render assigns a dynamic port via the PORT environment variable
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
